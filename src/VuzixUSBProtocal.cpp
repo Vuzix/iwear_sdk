@@ -747,7 +747,6 @@ int			MCUGetRcvCmdSize( unsigned char pktcmd )
 			return sizeof( EULERFORMATEDPKT );
 		case GET_GYRO_ZERO:
 		case DEBUG_MSG:
-		case TRACKER_GET:
 		case READMULTI_I2C:
 		case CLEAR_GYRO_ZERO:
 			return MAX_PKT_PAYLOAD;// crt: Looks these up in spec...not proper
@@ -763,8 +762,6 @@ int			MCUGetRcvCmdSize( unsigned char pktcmd )
 int			MCUGetSendCmdSize( unsigned char pktcmd )
 {
 	switch( pktcmd ) {
-		case COLOR_OFFSET_SET:
-			return 3;
 		case READ_I2C:
 		case WRITE_I2C:
 		case TRACKER_SET_REPORT_MODE:
